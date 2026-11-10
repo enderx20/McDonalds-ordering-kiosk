@@ -1,1 +1,1 @@
-# McDonalds-ordering-kios
+# McDonalds-ordering-kiosk
