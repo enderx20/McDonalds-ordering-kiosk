@@ -45,14 +45,7 @@ body {
     box-sizing: border-box;
 }
 
-.order-buttons {
-    flex: 3;
-    background-color: gray;
-    height: 100%;
-    padding: 20px;
-    /* Dodano: zapobiega wychodzeniu elementu poza flexbox przez padding */
-    box-sizing: border-box; 
-}
+
 
 .qrcode-button-container {
     flex: 2.75;
@@ -63,15 +56,77 @@ body {
 
     display: flex;
     justify-content: flex-end; /* Przesuwa przycisk do prawej krawędzi */
-    align-items: bottom;      /* Wyśrodkowuje przycisk w pionie */
+    align-items: flex-end;      /* Wyśrodkowuje przycisk w pionie */
     
     /* 2. Usuwamy padding z prawej strony (lub całkowicie, jeśli ma dotykać też góry/dołu) */
     padding: 0; 
     box-sizing: border-box;
 }
 .qrcode-button{
-
+  width: 140px;
+  height:165px;
   background-color: yellow;
   margin: 0;
+  background-image: url('assets/qr-button.jpg');
+  background-size: cover; /* Wypełnia cały obszar, może lekko przyciąć grafikę */
+  /* background-size: 100% 100%; <-- Użyj tego, jeśli obraz ma się rozciągnąć */
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  
+}
+
+.order-buttons {
+    flex: 3;
+   
+    height: 100%;
+    padding: 20px;
+    /* Dodano: zapobiega wychodzeniu elementu poza flexbox przez padding */
+    box-sizing: border-box; 
+}
+
+.order-now {
+  margin-top: 40px;
+  background-color: white;
+  border: 0.5px solid #dedede;
+  text-decoration: none;
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* 20px góra/dół, 40px lewa/prawa */
+  padding: 25px 48px; 
+  text-align: center;
+}
+.order-now-text{
+  font-weight: bold;
+  font-size: 18px;
+  color:black
+}
+
+.small-order {
+  margin-top: 10px;
+  padding: 0; /* Wyzerowanie paddingu przycisku */
+  background-color: white;
+  border: 0.5px solid #dedede;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.small-order-div {
+  width: 100%;
+  height: 100%;
+  /* Góra/dół: 10px, Prawa: 20px, Lewa: 0px */
+  padding: 10px 20px 10px 5px; 
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
 }
 
