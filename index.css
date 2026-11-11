@@ -91,6 +91,7 @@ body {
   margin-top: 40px;
   background-color: white;
   border: 0.5px solid #dedede;
+  border-radius: 2px;
   text-decoration: none;
   display: flex;
   cursor: pointer;
@@ -113,6 +114,7 @@ body {
   padding: 0; /* Wyzerowanie paddingu przycisku */
   background-color: white;
   border: 0.5px solid #dedede;
+  border-radius: 2px;
   cursor: pointer;
   text-decoration: none;
 }
@@ -128,5 +130,10 @@ body {
   justify-content: flex-start;
   align-items: center;
   gap: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
