@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
+    display: flex;
+    
+    flex: 1;          /* zamiast height: 100vh */
+    width: 100%;
+    min-height: 0;    /* pozwala się zmniejszać, gdy zawartość jest duża */
+}
+
+.control {
+    display: flex;
+    width: 100%;
+    background-color: gray;
+    flex: 0 0 auto;   /* wysokość wg zawartości */
+    /* albo stała: height: 80px; */
+}
+
+.sidebar{
+    
+    width: 250px;
+    
+    display: flex;
+    
+    
+    
+}
+
+.content{
+    display: flex;
+    flex:1;
+    
+}
+
+.sidebar-nav{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+.tab {
+    display: none;
+}
+
+  .tab.active {
+    display: flex;
+}
+
+
+.sidebar button {
+    background-color: white;
+    border: 0.5px solid #dedede;
+    border-radius: 2px;
+    width: 260px;
+    height: 50px;
+    margin-right: 10px;
+    padding: 0; /* usuwa domyślny odstęp przeglądarki */
+    cursor: pointer;
+
+    /* centrowanie zawartości bezpośrednio w przycisku */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* środek w poziomie */
+    align-items: center;     /* środek w pionie */
+    gap: 8px;
+                   /* równy odstęp między obrazkiem a tekstem */
+}
+
+.sidebar button.active {
+    font-weight: bold;
+}
+
+.sidebar button.active .button-text {
+  position: relative;
+  display: inline-block;
+}
+
+.sidebar button.active .button-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;              
+  width: 75%;                
+  height: 5px;
+  background-color: #dcd68a;
+  border-radius: 999px;
+}
+
+.sidebar button img {
+    width: 65px;          /* stała szerokość dla każdej ikony */
+    height: 50px;         /* stała wysokość (dopasowana do buttona 50px) */
+    object-fit: contain;  /* skaluje obrazek proporcjonalnie wewnątrz ramki */
+    flex-shrink: 0;       /* zapobiega ściskaniu obrazka przez tekst */
+}
+
