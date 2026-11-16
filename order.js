@@ -5,7 +5,7 @@ const buttons = document.querySelectorAll('.sidebar button');
 
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-      // usuń klasę active ze wszystkich
+     
       buttons.forEach(b => b.classList.remove('active'));
       tabs.forEach(t => t.classList.remove('active'));
 
@@ -14,3 +14,53 @@ const buttons = document.querySelectorAll('.sidebar button');
       document.getElementById(btn.dataset.tab).classList.add('active');
     });
 });
+
+
+// order
+
+const MAX_QTY = 6;
+const cart = [];
+let current = null, qty = 1;
+const $ = id => document.getElementById(id);
+
+const money = n => n.toFixed(2).replace(".", ",") + " €";
+
+function openProduct(item){
+  current = item; qty = 1;
+  $("pImg").innerHTML = `<img src="${item.img}" alt="">`;
+  $("pName").textContent = item.name;
+  $("pPrice").textContent = money(item.price);
+  renderQty();
+  $("product").classList.add("open");
+}
+
+function renderQty(){
+  $("qty").innerHTML = "";
+  for(let i = 1; i <= MAX_QTY; i++){
+    const b = document.createElement("button");
+    b.textContent = i;
+    if(i === qty) b.className = "sel";
+    b.onclick = () => { qty = i; renderQty(); };
+    $("qty").appendChild(b);
+  }
+}
+
+function closeProduct(){ $("product").classList.remove("open"); }
+
+// każdy przycisk .orderBtn otwiera ekran SWOJEGO dania
+document.querySelectorAll(".orderBtn").forEach(btn => {
+  btn.onclick = () => openProduct({
+    name:  btn.dataset.name,
+    price: parseFloat(btn.dataset.price),
+    img:   btn.dataset.img
+  });
+});
+
+$("cancelBtn").onclick = closeProduct;
+
+$("addBtn").onclick = () => {
+  cart.push({...current, qty});
+  closeProduct();                                   // ekran produktu znika
+  $("added").classList.add("open");                 // biały ekran "Added to order"
+  setTimeout(() => $("added").classList.remove("open"), 1200); // po 1,2 s znika i wracasz na stronę
+};

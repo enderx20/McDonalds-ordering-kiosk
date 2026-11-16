@@ -18,7 +18,8 @@ body {
     
     flex: 1;          /* zamiast height: 100vh */
     width: 100%;
-    min-height: 0;    /* pozwala się zmniejszać, gdy zawartość jest duża */
+    min-height: 0;
+       /* pozwala się zmniejszać, gdy zawartość jest duża */
 }
 
 .control {
@@ -42,6 +43,8 @@ body {
 .content{
     display: flex;
     flex:1;
+    min-width: 0;       
+    overflow-y: auto;
     
 }
 
@@ -61,6 +64,10 @@ body {
 
   .tab.active {
     display: flex;
+    display: flex;
+    flex-wrap: wrap;            /* KLUCZOWE: przenosi przyciski do nowej linii */
+    align-content: flex-start;  /* trzyma rzędy przycisków u góry, zamiast rozciągać je w pionie */
+    width: 100%;
 }
 
 
@@ -107,6 +114,10 @@ body {
     width: 65px;          /* stała szerokość dla każdej ikony */
     height: 50px;         /* stała wysokość (dopasowana do buttona 50px) */
     object-fit: contain;  /* skaluje obrazek proporcjonalnie wewnątrz ramki */
-    flex-shrink: 0;       /* zapobiega ściskaniu obrazka przez tekst */
+    flex-shrink: 0;       /* zapobiega ściskaniu obrazka przez test */
 }
+
+
+
+
 

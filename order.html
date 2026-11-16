@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="order.css">
+    <link rel="stylesheet" href="order-menu.css">
     <script src="order.js" defer></script>
     <title>Kiosk - Order</title>
 </head>
@@ -26,6 +27,7 @@
                     <span class="button-text">Burgers</span>
                 </button>
                 <button data-tab="nuggets">
+
                     <img src="assets/nuggets.png">
                     <span class="button-text">McNuggets® and Fingerfood</span>
                 </button>
@@ -41,36 +43,111 @@
                     <img src="assets/drinks.png">
                     <span class="button-text">Drinks</span>
                 </button>
+                <button data-tab="desserts">
+                    <img src="assets/desserts.png">
+                    <span class="button-text">Desserts</span>
+                </button>
+                <button data-tab="cafe"?>
+                    <img src="assets/cafe.png">
+                    <span class="button-text">McCafé®</span>
+                </button>
             </nav>
         </div>
         <div class="content">
-            <div id="featured", class="tab active">
+            <div id="featured" class="tab active">
                 Featured
             </div>
-            <div id="breakfast", class="tab">
-                Breakfast
+            <div id="breakfast" class="tab">
+                <button class="orderBtn" data-name="Bacon, Egg & Cheese Biscuit" data-price="5.99" data-img="menu/bacon-biscuit.webp">
+                    <img src="menu/bacon-biscuit.webp">
+                    <span class="item-name">Bacon, Egg & Cheese Biscuit</span>
+                    <span class="item-price">5.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Hotcakes" data-price="3.99" data-img="menu/hotcakes.webp">
+                    <img src="menu/hotcakes.webp">
+                    <span class="item-name">Hotcakes</span>
+                    <span class="item-price">3.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Hash Browns" data-price="2.99" data-img="menu/hashbrowns.webp">
+                    <img src="menu/hashbrowns.webp">
+                    <span class="item-name">Hash Browns</span>
+                    <span class="item-price">2.99€</span>
+                </button>
+                
             </div>
-            <div id="burger", class="tab">
-                Burgers
+            <div id="burger" class="tab">
+                <button class="orderBtn" data-name="Big Mac®" data-price="6.99" data-img="menu/BigMac.webp">
+                    <img src="menu/BigMac.webp">
+                    <span class="item-name">Big Ma®c</span>
+                    <span class="item-price">6.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Quarter Pounder®" data-price="5.99" data-img="menu/QuarterPounder.webp">
+                    <img src="menu/QuarterPounder.webp">
+                    <span class="item-name">Quarter Pounder®</span>
+                    <span class="item-price">5.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Cheeseburger" data-price="3.50" data-img="menu/Cheeseburger.webp">
+                    <img src="menu/Cheeseburger.webp">
+                    <span class="item-name">Cheeseburger</span>
+                    <span class="item-price">3.50€</span>
+                </button>
+                
+                <button class="orderBtn" data-name="Hamburger" data-price="2.99" data-img="menu/Hamburger.webp">
+                    <img src="menu/Hamburger.webp">
+                    <span class="item-name">Hamburger</span>
+                    <span class="item-price">2.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Filet-O-Fish®" data-price="3.99" data-img="menu/FiletOFish.webp">
+                    <img src="menu/FiletOFish.webp">
+                    <span class="item-name">Filet-O-Fish®</span>
+                    <span class="item-price">3.99€</span>
+                </button>
+                <button class="orderBtn" data-name="McCrispy®" data-price="3.50" data-img="menu/McCrispy.webp">
+                    <img src="menu/McCrispy.webp">
+                    <span class="item-name">McCrispy®</span>
+                    <span class="item-price">3.50€</span>
+                </button>
             </div>
-            <div id="nuggets", class="tab">
+            <div id="nuggets" class="tab">
                 Nuggets
             </div>
-            <div id="happy-meal", class="tab">
+            <div id="happy-meal" class="tab">
                 Happy meal
             </div>
-            <div id="fries", class="tab">
+            <div id="fries" class="tab">
                 Fries
             </div>
-            <div id="drinks", class="tab">
+            <div id="drinks" class="tab">
                 Drinks
+            </div>
+            <div id="desserts" class="tab">
+                Desserts
+            </div>
+            <div id="cafe" class="tab">
+                Cafe
             </div>
         </div>
     </div>
 
+
     <div class="control">
         Control
     </div>
+
+
+    <div id="product">
+    <div class="big" id="pImg"></div>
+    <div class="body">
+      <h2 id="pName"></h2>
+      <div class="price" id="pPrice"></div>
+      <div class="qty" id="qty"></div>
+      <div class="actions">
+        <button id="addBtn">Add to order</button>
+        <button id="cancelBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <div id="added"><span>✔</span>Added to order</div>
     
 </body>
 </html>
