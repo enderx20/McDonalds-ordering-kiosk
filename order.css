@@ -22,13 +22,7 @@ body {
        /* pozwala się zmniejszać, gdy zawartość jest duża */
 }
 
-.control {
-    display: flex;
-    width: 100%;
-    background-color: gray;
-    flex: 0 0 auto;   /* wysokość wg zawartości */
-    /* albo stała: height: 80px; */
-}
+
 
 .sidebar{
     
@@ -116,6 +110,98 @@ body {
     object-fit: contain;  /* skaluje obrazek proporcjonalnie wewnątrz ramki */
     flex-shrink: 0;       /* zapobiega ściskaniu obrazka przez test */
 }
+
+.qr-button{
+      width: 140px;
+  height:165px;
+  background-color: yellow;
+  margin: 0;
+  background-image: url('assets/qr-button.jpg');
+  background-size: cover; /* Wypełnia cały obszar, może lekko przyciąć grafikę */
+  /* background-size: 100% 100%; <-- Użyj tego, jeśli obraz ma się rozciągnąć */
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 350px;
+}
+
+.control {
+    display: flex;
+    width: 100%;
+    
+    flex: 0 0 auto; 
+    flex-direction: row;
+    justify-content: flex-end;
+      /* wysokość wg zawartości */
+    /* albo stała: height: 80px; */
+}
+
+.view-order{
+    background-color: #ffbc0d;
+    border: 0.5px solid #dedede;
+    border-radius: 2px;
+    
+    width: 200px;
+    height: 50px;
+    
+}
+
+.total{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
+    width: 220px;
+    height: 50px;
+    
+    align-items: center;
+    margin-right: 5px;
+    font-weight: bold;
+    
+    
+    
+    
+}
+
+.control-buttons{
+    
+    width: 420px;
+    margin-top: 30px;
+    margin-right: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.total-div{
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    width: 100%;
+    
+}
+
+.control-button{
+      background-color: white;
+  border: 0.5px solid #dedede;
+  border-radius: 2px;
+ 
+  width: 180px;
+  height: 30px;
+  cursor:pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.control-button-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
 
 
 

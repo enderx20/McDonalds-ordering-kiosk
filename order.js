@@ -18,34 +18,47 @@ const buttons = document.querySelectorAll('.sidebar button');
 
 // order
 
-const MAX_QTY = 6;
 const cart = [];
 let current = null, qty = 1;
 const $ = id => document.getElementById(id);
 
 const money = n => n.toFixed(2).replace(".", ",") + " €";
 
+function updateCartTotal(){
+  const sum = cart.reduce((acc, item) => acc + item.total, 0);
+  document.querySelectorAll(".cart-total").forEach(el => {
+    el.textContent = money(sum);
+  });
+}
+
+function updateQtyUI(){
+  $("qtyVal").textContent = qty;
+  $("pPrice").textContent = money(current.price * qty);
+  $("minusBtn").disabled = qty <= 1;
+}
+
 function openProduct(item){
-  current = item; qty = 1;
+  current = item;
+  qty = 1;
   $("pImg").innerHTML = `<img src="${item.img}" alt="">`;
   $("pName").textContent = item.name;
-  $("pPrice").textContent = money(item.price);
-  renderQty();
+  updateQtyUI();
   $("product").classList.add("open");
 }
 
-function renderQty(){
-  $("qty").innerHTML = "";
-  for(let i = 1; i <= MAX_QTY; i++){
-    const b = document.createElement("button");
-    b.textContent = i;
-    if(i === qty) b.className = "sel";
-    b.onclick = () => { qty = i; renderQty(); };
-    $("qty").appendChild(b);
-  }
-}
-
 function closeProduct(){ $("product").classList.remove("open"); }
+
+$("minusBtn").onclick = () => {
+  if(qty > 1){
+    qty--;
+    updateQtyUI();
+  }
+};
+
+$("plusBtn").onclick = () => {
+  qty++;
+  updateQtyUI();
+};
 
 // każdy przycisk .orderBtn otwiera ekran SWOJEGO dania
 document.querySelectorAll(".orderBtn").forEach(btn => {
@@ -59,7 +72,8 @@ document.querySelectorAll(".orderBtn").forEach(btn => {
 $("cancelBtn").onclick = closeProduct;
 
 $("addBtn").onclick = () => {
-  cart.push({...current, qty});
+  cart.push({...current, qty, total: current.price * qty});
+  updateCartTotal();                                // aktualizuje sumę we wszystkich .cart-total
   closeProduct();                                   // ekran produktu znika
   $("added").classList.add("open");                 // biały ekran "Added to order"
   setTimeout(() => $("added").classList.remove("open"), 1200); // po 1,2 s znika i wracasz na stronę
