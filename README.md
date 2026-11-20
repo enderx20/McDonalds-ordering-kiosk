@@ -1,7 +1,7 @@
 
 # McDonald's ordering kiosk
 
-This is a reacreation of Mc McDonald's ordering kiosk.
+This is a recreation of Mc McDonald's ordering kiosk.
 
 **DISCLAMER: This project was created solely for educational purposes as part of Hack Club and is not affiliated with McDonald's. All product names, logos, and images are the property of the McDonald's company**
 
