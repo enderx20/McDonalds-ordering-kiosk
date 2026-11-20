@@ -7,7 +7,7 @@ This is a recreation of Mc McDonald's ordering kiosk.
 
 # Description
 
-Project focuses on recreating the ordering kiosk as close to the orignal as posible. It has most of the menu items you will typically find in McDonald's . It also has the discount code system and the recipt generator.
+Project focuses on recreating the ordering kiosk as close to the original as possible. It has most of the menu items you will typically find in McDonald's . It also has the discount code system and the receipt generator and more.
 
 # Demo
 
