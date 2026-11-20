@@ -1,0 +1,206 @@
+#orderModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 30;
+}
+
+#orderModal.open {
+  display: flex;
+  padding: 0; /* usuwa białą ramkę dookoła ekranu */
+}
+
+.order-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.order-box h2 {
+  margin: 0;
+  padding: 16px;
+}
+
+#orderList {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  
+}
+
+/* Układa elementy pojedynczego produktu w jednej poziomej linii zamiast jeden pod drugim */
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.order-item .tpl-name {
+  margin: 0;
+  flex: 1; /* wypycha ilość i cenę do prawej strony */
+  font-size: 1rem;
+}
+
+.order-footer {
+  width: 100%;
+  padding: 16px 16px 0 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+
+  
+}
+
+
+
+.order-qty {
+  width: 110px;
+  height: 34px;
+  margin: 0;
+}
+
+.order-qty button {
+  width: 34px;
+  font-size: 1.1rem;
+}
+
+.tpl-qty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #d5d5d5;
+  border-right: 1px solid #d5d5d5;
+}
+
+.top{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    flex-direction: row;
+   
+}
+
+.tpl-remove{
+    background-color: white;
+    border: 0.5px solid #dedede;
+    border-radius: 2px;
+    cursor: pointer;
+    height: 25px;
+}
+
+.complete-total-div {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* zajmie dokładnie drugie 50% */
+  min-width: 0;
+  /* wyrównanie zawartości prawej połówki do prawej krawędzi: */
+  align-items: flex-end; 
+  padding-right: 40px; /* zamiast sztywnego margin-right: 100px */
+}
+
+.complete-total {
+  width: 405px; /* dokładnie tyle ile mają dwa przyciski (200px + 5px gap + 200px) */
+  margin-bottom: 30px; /* zmniejszyłem z 70px, żeby nie było wielkiej dziury */
+  font-weight: bold;
+  font-size: x-large;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* "Total" po lewej, kwota po prawej */
+}
+
+.complete-total a{
+    margin-right: 270px;
+}
+
+.complete-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+#closeOrderBtn{
+    width: 200px;
+    height: 40px;
+    background-color: white;
+    border: 0.5px solid #dedede;
+    border-radius: 2px;
+}
+
+
+.complete-order{
+    width: 200px;
+    height: 40px;
+    background-color: #ffbc0d;
+    border: 0.5px solid #dedede;
+    border-radius: 2px;
+}
+
+.complete-total-div-qr {
+  display: flex;
+  flex: 1; 
+  min-width: 0;
+  box-sizing: border-box;
+  align-items: flex-end;
+  
+  
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#order-qr{
+  width: 140px;
+  height:165px;
+  background-color: yellow;
+  margin: 0;
+  background-image: url('assets/qr-button.jpg');
+  background-size: cover; /* Wypełnia cały obszar, może lekko przyciąć grafikę */
+  /* background-size: 100% 100%; <-- Użyj tego, jeśli obraz ma się rozciągnąć */
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  
+}
+
+.href{
+    text-decoration: none;
+    color: inherit;
+}
+
+.complete-buttons-contol{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+.cart-total{
+    white-space: nowrap;
+}
+
+
+button{
+    cursor: pointer;
+}
+
+.status-screen {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 50;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-screen.open {
+  display: flex;
+}
+

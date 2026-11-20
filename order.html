@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="order.css">
+    <link rel="stylesheet" href="order-menu.css">
+    <link rel="stylesheet" href="total.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="order.js" defer></script>
+    <title>Kiosk - Order</title>
+</head>
+<body>
+    <div class="menu">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <button class="active" , data-tab="featured">
+                    
+                    <img src="assets/Featured.png" >
+                    <span class="button-text">Featured</span>
+                    
+                </button>
+                <button data-tab="breakfast">
+                    <img src="assets/breakfast.png">
+                    <span class="button-text">Breakfast</span>
+                </button>
+                <button data-tab="burger">
+                    <img src="assets/burgers.png">
+                    <span class="button-text">Burgers</span>
+                </button>
+                <button data-tab="nuggets">
+
+                    <img src="assets/nuggets.png">
+                    <span class="button-text">McNuggets® and Fingerfood</span>
+                </button>
+                <button data-tab="happy-meal">
+                    <img src="assets/happy_meal.png">
+                    <span class="button-text">Happy meal®</span>
+                </button>
+                <button data-tab="fries">
+                    <img src="assets/fries.png">
+                    <span class="button-text">Fries and Sides</span>
+                </button>
+                <button data-tab="drinks">
+                    <img src="assets/drinks.png">
+                    <span class="button-text">Drinks</span>
+                </button>
+                <button data-tab="desserts">
+                    <img src="assets/desserts.png">
+                    <span class="button-text">Desserts</span>
+                </button>
+                <button data-tab="cafe"?>
+                    <img src="assets/cafe.png">
+                    <span class="button-text">McCafé®</span>
+                </button>
+            </nav>
+        </div>
+        <div class="content">
+            <div id="featured" class="tab active">
+                <button class="orderBtn" data-name="Bacon, Egg & Cheese Biscuit" data-price="5.99" data-img="menu/bacon-biscuit.webp">
+                    <img src="menu/bacon-biscuit.webp">
+                    <span class="item-name">Bacon, Egg & Cheese Biscuit</span>
+                    <span class="item-price">5.99€</span>
+                </button>
+                <button class="orderBtn" data-name="McCafé® Iced Coffee" data-price="2.50" data-img="menu/iced-coffe.webp">
+                    <img src="menu/iced-coffe.webp">
+                    <span class="item-name">McCafé® Iced Coffee</span>
+                    <span class="item-price">2.50€</span>
+                </button>
+                <button class="orderBtn" data-name="Big Mac®" data-price="6.99" data-img="menu/BigMac.webp">
+                    <img src="menu/BigMac.webp">
+                    <span class="item-name">Big Mac®</span>
+                    <span class="item-price">6.99€</span>
+                </button>
+                <button class="orderBtn" data-name="4 Piece Chicken McNuggets®" data-price="3.99" data-img="menu/nuggets.webp">
+                    <img src="menu/nuggets.webp">
+                    <span class="item-name">4 Piece Chicken McNuggets®</span>
+                    <span class="item-price">3.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Quarter Pounder®" data-price="5.99" data-img="menu/QuarterPounder.webp">
+                    <img src="menu/QuarterPounder.webp">
+                    <span class="item-name">Quarter Pounder®</span>
+                    <span class="item-price">5.99€</span>
+                </button>
+                <button class="orderBtn" data-name="McCrispy®" data-price="3.50" data-img="menu/McCrispy.webp">
+                    <img src="menu/McCrispy.webp">
+                    <span class="item-name">McCrispy®</span>
+                    <span class="item-price">3.50€</span>
+                </button>
+            </div>
+            <div id="breakfast" class="tab">
+                <button class="orderBtn" data-name="Bacon, Egg & Cheese Biscuit" data-price="5.99" data-img="menu/bacon-biscuit.webp">
+                    <img src="menu/bacon-biscuit.webp">
+                    <span class="item-name">Bacon, Egg & Cheese Biscuit</span>
+                    <span class="item-price">5.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Hotcakes" data-price="3.99" data-img="menu/hotcakes.webp">
+                    <img src="menu/hotcakes.webp">
+                    <span class="item-name">Hotcakes</span>
+                    <span class="item-price">3.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Hash Browns" data-price="2.99" data-img="menu/hashbrowns.webp">
+                    <img src="menu/hashbrowns.webp">
+                    <span class="item-name">Hash Browns</span>
+                    <span class="item-price">2.99€</span>
+                </button>
+                
+            </div>
+            <div id="burger" class="tab">
+                <button class="orderBtn" data-name="Big Mac®" data-price="6.99" data-img="menu/BigMac.webp">
+                    <img src="menu/BigMac.webp">
+                    <span class="item-name">Big Mac®</span>
+                    <span class="item-price">6.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Quarter Pounder®" data-price="5.99" data-img="menu/QuarterPounder.webp">
+                    <img src="menu/QuarterPounder.webp">
+                    <span class="item-name">Quarter Pounder®</span>
+                    <span class="item-price">5.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Cheeseburger" data-price="3.50" data-img="menu/Cheeseburger.webp">
+                    <img src="menu/Cheeseburger.webp">
+                    <span class="item-name">Cheeseburger</span>
+                    <span class="item-price">3.50€</span>
+                </button>
+                
+                <button class="orderBtn" data-name="Hamburger" data-price="2.99" data-img="menu/Hamburger.webp">
+                    <img src="menu/Hamburger.webp">
+                    <span class="item-name">Hamburger</span>
+                    <span class="item-price">2.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Filet-O-Fish®" data-price="3.99" data-img="menu/FiletOFish.webp">
+                    <img src="menu/FiletOFish.webp">
+                    <span class="item-name">Filet-O-Fish®</span>
+                    <span class="item-price">3.99€</span>
+                </button>
+                <button class="orderBtn" data-name="McCrispy®" data-price="3.50" data-img="menu/McCrispy.webp">
+                    <img src="menu/McCrispy.webp">
+                    <span class="item-name">McCrispy®</span>
+                    <span class="item-price">3.50€</span>
+                </button>
+            </div>
+            <div id="nuggets" class="tab">
+                </button>
+                <button class="orderBtn" data-name="4 Piece Chicken McNuggets®" data-price="3.99" data-img="menu/nuggets.webp">
+                    <img src="menu/nuggets.webp">
+                    <span class="item-name">4 Piece Chicken McNuggets®</span>
+                    <span class="item-price">3.99€</span>
+                </button>
+                <button class="orderBtn" data-name="McCrispy® Strips" data-price="4.99" data-img="menu/crispy.webp">
+                    <img src="menu/crispy.webp">
+                    <span class="item-name">McCrispy® Strips</span>
+                    <span class="item-price">4.99€</span>
+                </button>
+            </div>
+            <div id="happy-meal" class="tab">
+                <button class="orderBtn" data-name="Hamburger Happy Meal®" data-price="5.20" data-img="menu/hamburger-happymeal.webp">
+                    <img src="menu/hamburger-happymeal.webp">
+                    <span class="item-name">Hamburger Happy Meal®</span>
+                    <span class="item-price">5.20€</span>
+                </button>
+                <button class="orderBtn" data-name="4 piece Chicken McNuggets® Happy Meal®" data-price="5.20" data-img="menu/happymeal-nuggets-4.webp">
+                    <img src="menu/happymeal-nuggets-4.webp">
+                    <span class="item-name">4 piece Chicken McNuggets® Happy Meal®</span>
+                    <span class="item-price">5.20€</span>
+                </button>
+                <button class="orderBtn" data-name="6 piece Chicken McNuggets® Happy Meal®" data-price="5.30" data-img="menu/happymeal-nuggets-6.webp">
+                    <img src="menu/happymeal-nuggets-6.webp">
+                    <span class="item-name">6 piece Chicken McNuggets® Happy Meal®</span>
+                    <span class="item-price">5.50€</span>
+                </button>
+            </div>
+            <div id="fries" class="tab">
+                <button class="orderBtn" data-name="Small fries" data-price="2.99" data-img="menu/small-fries.png">
+                    <img src="menu/small-fries.png">
+                    <span class="item-name">Small fries</span>
+                    <span class="item-price">2.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Medium fries" data-price="3.99" data-img="menu/medium-fries.png">
+                    <img src="menu/medium-fries.png">
+                    <span class="item-name">Medium fries</span>
+                    <span class="item-price">3.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Large fries" data-price="4.99" data-img="menu/large-fries.jpeg">
+                    <img src="menu/large-fries.jpeg">
+                    <span class="item-name">Large fries</span>
+                    <span class="item-price">4.99€</span>
+                </button>
+            </div>
+            <div id="drinks" class="tab">
+                <button class="orderBtn" data-name="Coca-Cola®" data-price="2.99" data-img="menu/coke.webp">
+                    <img src="menu/coke.webp">
+                    <span class="item-name">Coca-Cola®</span>
+                    <span class="item-price">2.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Diet Coke®" data-price="3.20" data-img="menu/diet-coke.webp">
+                    <img src="menu/diet-coke.webp">
+                    <span class="item-name">Diet Coke®</span>
+                    <span class="item-price">3.20€</span>
+                </button>
+                <button class="orderBtn" data-name="Dr Pepper®" data-price="3.50" data-img="menu/drpepper.webp">
+                    <img src="menu/drpepper.webp">
+                    <span class="item-name">Dr Pepper®</span>
+                    <span class="item-price">3.50€</span>
+                </button>
+                <button class="orderBtn" data-name="Sprite®" data-price="3.50" data-img="menu/sprite.webp">
+                    <img src="menu/sprite.webp">
+                    <span class="item-name">Sprite®</span>
+                    <span class="item-price">2.99€</span>
+                </button>
+                <button class="orderBtn" data-name="DASANI® Water" data-price="1.99" data-img="menu/water.webp">
+                    <img src="menu/water.webp">
+                    <span class="item-name">DASANI® Water</span>
+                    <span class="item-price">1.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Fanta®" data-price="2.99" data-img="menu/fanta.webp">
+                    <img src="menu/fanta.webp">
+                    <span class="item-name">Fanta®</span>
+                    <span class="item-price">2.99€</span>
+                </button>
+            </div>
+            <div id="desserts" class="tab">
+                <button class="orderBtn" data-name="OREO® McFlurry®" data-price="4.99" data-img="menu/flurry.webp">
+                    <img src="menu/flurry.webp">
+                    <span class="item-name">OREO® McFlurry®</span>
+                    <span class="item-price">4.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Vanilla Cone" data-price="3.99" data-img="menu/cone.webp">
+                    <img src="menu/cone.webp">
+                    <span class="item-name">Vanilla Cone</span>
+                    <span class="item-price">3.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Vanilla Shake" data-price="3.99" data-img="menu/shake.webp">
+                    <img src="menu/shake.webp">
+                    <span class="item-name">Vanilla Shake</span>
+                    <span class="item-price">3.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Hot Fudge Sundae" data-price="2.99" data-img="menu/sundae.webp">
+                    <img src="menu/sundae.webp">
+                    <span class="item-name">Hot Fudge Sundae</span>
+                    <span class="item-price">2.99€</span>
+                </button>
+                <button class="orderBtn" data-name="Chocolate Chip Cookie" data-price="2.99" data-img="menu/cookie.webp">
+                    <img src="menu/cookie.webp">
+                    <span class="item-name">Chocolate Chip Cookie</span>
+                    <span class="item-price">2.99€</span>
+                </button>
+            </div>
+            <div id="cafe" class="tab">
+                <button class="orderBtn" data-name="McCafé® Iced Coffee" data-price="2.50" data-img="menu/iced-coffe.webp">
+                    <img src="menu/iced-coffe.webp">
+                    <span class="item-name">McCafé® Iced Coffee</span>
+                    <span class="item-price">2.50€</span>
+                </button>
+                <button class="orderBtn" data-name="Hot Tea" data-price="2.20" data-img="menu/tea.webp">
+                    <img src="menu/tea.webp">
+                    <span class="item-name">Hot Tea</span>
+                    <span class="item-price">2.20€</span>
+                </button>
+                <button class="orderBtn" data-name="McCafé® Caramel Frappé" data-price="3.99" data-img="menu/frappe.webp">
+                    <img src="menu/frappe.webp">
+                    <span class="item-name">McCafé® Caramel Frappé</span>
+                    <span class="item-price">3.99€</span>
+                </button>
+                <button class="orderBtn" data-name="McCafé® Latte" data-price="2.99" data-img="menu/latte.webp">
+                    <img src="menu/latte.webp">
+                    <span class="item-name">McCafé® Latte</span>
+                    <span class="item-price">2.99€</span>
+                </button>
+                <button class="orderBtn" data-name="McCafé® Americano" data-price="2.99" data-img="menu/americano.webp">
+                    <img src="menu/americano.webp">
+                    <span class="item-name">McCafé® Americano</span>
+                    <span class="item-price">2.99€</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="control">
+        <button class="qr-button qr-button open-code-btn"></button>
+        <div class="control-buttons">
+            <div class="total-div">
+                <div class="total">
+                    <img src="assets/take-away.png" height="60", width="100">
+                     <a class="cart-total">0,00 €</a>
+                </div>
+                <button class="view-order">View order</button>
+            </div>
+            <div class="total-div">
+                <a href="index.html" class="href">
+                    <button class="control-button">
+                        <div class="control-button-div">
+                            Cancel order
+                        </div>
+                    </button>
+                </a>
+                <a href="accessibility.html" class="href">
+                    <button class="control-button">
+                        <div class="control-button-div">
+                            <img src="assets/accessibility.png" width="25", height="25">
+                            Accessibility settings
+                        </div>
+                    </button>
+                </a>
+
+
+            </div>
+          
+
+        </div>
+        
+        
+        
+    </div>
+
+
+  <div id="product">
+  <div class="body">
+    <div class="box">
+      <div class="big" id="pImg"></div>
+      <h2 id="pName"></h2>
+      <div class="price" id="pPrice"></div>
+      <div class="qty-box">
+        <button type="button" id="minusBtn">−</button>
+        <div id="qtyVal">1</div>
+        <button type="button" id="plusBtn">+</button>
+      </div>
+      <div class="actions">
+        <button id="cancelBtn">Cancel</button>
+        <button id="addBtn">Add to order</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="added">
+    <video id="addedVideo" src="assets/tick.mp4" muted playsinline></video>
+    <span>Added to order</span>
+</div>
+
+
+<div id="orderModal">
+  <div class="order-box">
+    <div class="top">
+        <img src="assets/take-away.png" width="100", height="60">
+        <h2>Your order</h2>
+
+    </div>
+    
+    <!-- Tutaj JS wrzuci wszystkie dodane przedmioty -->
+    
+
+    <div id="orderList"></div>
+
+    <!-- Szablon pojedynczego przedmiotu (możesz dowolnie przestawiać te tagi) -->
+    <template id="orderItemTpl">
+        <div class="order-item">
+            <img class="tpl-img" src="" alt="" width="50" height="50">
+            <h3 class="tpl-name"></h3>
+
+            <div class="qty-box order-qty">
+                <button type="button" class="tpl-minus">−</button>
+                <div class="tpl-qty">1</div>
+                <button type="button" class="tpl-plus">+</button>
+            </div>
+
+                <div class="tpl-price"></div>
+                <button type="button" class="tpl-remove">Remove</button>
+        </div>
+    </template>
+
+    <div class="order-footer">
+        <div class="complete-total-div-qr">
+            <button id="order-qr" class="open-code-btn"></button>
+
+        </div>
+        
+        <div class="complete-total-div">
+            <div class="complete-total">
+                <a>Total</a>
+                <span class="cart-total">0,00 €</span>
+            </div>
+            <div class="complete-buttons">
+                <button type="button" id="closeOrderBtn">Order more</button>
+                <button class="complete-order">Complete order</button>
+                
+            </div>
+
+            <div class="complete-buttons-contol">
+                <a href="accessibility.html" class="href">
+                    <button class="control-button">
+                        <div class="control-button-div">
+                            <img src="assets/accessibility.png" width="25", height="25">
+                            Accessibility settings
+                        </div>
+                    </button>
+                </a>
+                <a href="index.html" class="href">
+                    <button class="control-button">
+                        <div class="control-button-div">
+                            Cancel order
+                        </div>
+                    </button>
+                </a>
+            </div>
+
+        
+        </div>
+
+    </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Krok 1: Pierwszy div po kliknięciu Complete order -->
+<div id="step1Screen" class="status-screen">
+  <h2>Processing your order...</h2>
+  <p>Please wait</p>
+</div>
+
+<!-- Krok 2: Drugi div po 3 sekundach -->
+<div id="step2Screen" class="status-screen">
+  <h2>The order has been recived and it is now being prepared</h2>
+  <p>Printing your recipt...</p>
+</div>
+    
+</body>
+</html>

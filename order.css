@@ -1,0 +1,209 @@
+body {
+    margin: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
+    display: flex;
+    
+    flex: 1;          /* zamiast height: 100vh */
+    width: 100%;
+    min-height: 0;
+       /* pozwala się zmniejszać, gdy zawartość jest duża */
+}
+
+
+
+.sidebar{
+    
+    width: 250px;
+    
+    display: flex;
+    
+    
+    
+}
+
+.content{
+    display: flex;
+    flex:1;
+    min-width: 0;       
+    overflow-y: auto;
+    
+}
+
+.sidebar-nav{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+.tab {
+    display: none;
+}
+
+  .tab.active {
+    display: flex;
+    display: flex;
+    flex-wrap: wrap;            /* KLUCZOWE: przenosi przyciski do nowej linii */
+    align-content: flex-start;  /* trzyma rzędy przycisków u góry, zamiast rozciągać je w pionie */
+    width: 100%;
+}
+
+
+.sidebar button {
+    background-color: white;
+    border: 0.5px solid #dedede;
+    border-radius: 2px;
+    width: 260px;
+    height: 50px;
+    margin-right: 10px;
+    padding: 0; /* usuwa domyślny odstęp przeglądarki */
+    cursor: pointer;
+
+    /* centrowanie zawartości bezpośrednio w przycisku */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* środek w poziomie */
+    align-items: center;     /* środek w pionie */
+    gap: 8px;
+                   /* równy odstęp między obrazkiem a tekstem */
+}
+
+.sidebar button.active {
+    font-weight: bold;
+}
+
+.sidebar button.active .button-text {
+  position: relative;
+  display: inline-block;
+}
+
+.sidebar button.active .button-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;              
+  width: 75%;                
+  height: 5px;
+  background-color: #dcd68a;
+  border-radius: 999px;
+}
+
+.sidebar button img {
+    width: 65px;          /* stała szerokość dla każdej ikony */
+    height: 50px;         /* stała wysokość (dopasowana do buttona 50px) */
+    object-fit: contain;  /* skaluje obrazek proporcjonalnie wewnątrz ramki */
+    flex-shrink: 0;       /* zapobiega ściskaniu obrazka przez test */
+}
+
+.qr-button{
+      width: 140px;
+  height:165px;
+  background-color: yellow;
+  margin: 0;
+  background-image: url('assets/qr-button.jpg');
+  background-size: cover; /* Wypełnia cały obszar, może lekko przyciąć grafikę */
+  /* background-size: 100% 100%; <-- Użyj tego, jeśli obraz ma się rozciągnąć */
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 350px;
+}
+
+.control {
+    display: flex;
+    width: 100%;
+    
+    flex: 0 0 auto; 
+    flex-direction: row;
+    justify-content: flex-end;
+      /* wysokość wg zawartości */
+    /* albo stała: height: 80px; */
+}
+
+.view-order{
+    background-color: #ffbc0d;
+    border: 0.5px solid #dedede;
+    border-radius: 2px;
+    
+    width: 200px;
+    height: 50px;
+    
+}
+
+.total{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
+    width: 220px;
+    height: 50px;
+    
+    align-items: center;
+    margin-right: 5px;
+    font-weight: bold;
+    
+    
+    
+    
+}
+
+.control-buttons{
+    
+    width: 420px;
+    margin-top: 30px;
+    margin-right: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.total-div{
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    width: 100%;
+    
+}
+
+.control-button{
+      background-color: white;
+  border: 0.5px solid #dedede;
+  border-radius: 2px;
+ 
+  width: 180px;
+  height: 30px;
+  cursor:pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.control-button-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+
+
+
