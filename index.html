@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <title>Kiosk</title>
+    <script src="qr-btn.js" defer></script>
 </head>
 <body>
     <div class="video">
@@ -21,7 +22,8 @@
 
     <div class="buttons">
         <div class="qrcode-button-container">
-            <button class="qrcode-button">
+            <!-- DOBRZE: wszystkie klasy w jednym atrybucie -->
+            <button type="button" class="qrcode-button qr-button open-code-btn">
              
             </button>
         </div>

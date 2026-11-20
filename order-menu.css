@@ -81,6 +81,10 @@ body{
   justify-content: center;
 }
 
+#added.open span{
+    font-weight: bold;
+}
+
 
 
 
@@ -160,4 +164,10 @@ body{
   border-right: 1px solid #d5d5d5;
   font-size: 1rem;
   color: #333;
+}
+
+#added video {
+  width: 160px; /* dopasuj rozmiar do swojego filmu */
+  height: auto;
+  margin-bottom: 12px;
 }

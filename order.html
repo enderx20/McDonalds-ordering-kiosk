@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="order.css">
     <link rel="stylesheet" href="order-menu.css">
+    <link rel="stylesheet" href="total.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="order.js" defer></script>
     <title>Kiosk - Order</title>
 </head>
@@ -151,7 +153,21 @@
                 </button>
             </div>
             <div id="happy-meal" class="tab">
-                Happy meal
+                <button class="orderBtn" data-name="Hamburger Happy Meal®" data-price="5.20" data-img="menu/hamburger-happymeal.webp">
+                    <img src="menu/hamburger-happymeal.webp">
+                    <span class="item-name">Hamburger Happy Meal®</span>
+                    <span class="item-price">5.20€</span>
+                </button>
+                <button class="orderBtn" data-name="4 piece Chicken McNuggets® Happy Meal®" data-price="5.20" data-img="menu/happymeal-nuggets-4.webp">
+                    <img src="menu/happymeal-nuggets-4.webp">
+                    <span class="item-name">4 piece Chicken McNuggets® Happy Meal®</span>
+                    <span class="item-price">5.20€</span>
+                </button>
+                <button class="orderBtn" data-name="6 piece Chicken McNuggets® Happy Meal®" data-price="5.30" data-img="menu/happymeal-nuggets-6.webp">
+                    <img src="menu/happymeal-nuggets-6.webp">
+                    <span class="item-name">6 piece Chicken McNuggets® Happy Meal®</span>
+                    <span class="item-price">5.50€</span>
+                </button>
             </div>
             <div id="fries" class="tab">
                 <button class="orderBtn" data-name="Small fries" data-price="2.99" data-img="menu/small-fries.png">
@@ -261,7 +277,7 @@
 
 
     <div class="control">
-        <button class="qr-button"></button>
+        <button class="qr-button qr-button open-code-btn"></button>
         <div class="control-buttons">
             <div class="total-div">
                 <div class="total">
@@ -316,7 +332,100 @@
     </div>
   </div>
 </div>
-<div id="added"><span>✔</span>Added to order</div>
+<div id="added">
+    <video id="addedVideo" src="assets/tick.mp4" muted playsinline></video>
+    <span>Added to order</span>
+</div>
+
+
+<div id="orderModal">
+  <div class="order-box">
+    <div class="top">
+        <img src="assets/take-away.png" width="100", height="60">
+        <h2>Your order</h2>
+
+    </div>
+    
+    <!-- Tutaj JS wrzuci wszystkie dodane przedmioty -->
+    
+
+    <div id="orderList"></div>
+
+    <!-- Szablon pojedynczego przedmiotu (możesz dowolnie przestawiać te tagi) -->
+    <template id="orderItemTpl">
+        <div class="order-item">
+            <img class="tpl-img" src="" alt="" width="50" height="50">
+            <h3 class="tpl-name"></h3>
+
+            <div class="qty-box order-qty">
+                <button type="button" class="tpl-minus">−</button>
+                <div class="tpl-qty">1</div>
+                <button type="button" class="tpl-plus">+</button>
+            </div>
+
+                <div class="tpl-price"></div>
+                <button type="button" class="tpl-remove">Remove</button>
+        </div>
+    </template>
+
+    <div class="order-footer">
+        <div class="complete-total-div-qr">
+            <button id="order-qr" class="open-code-btn"></button>
+
+        </div>
+        
+        <div class="complete-total-div">
+            <div class="complete-total">
+                <a>Total</a>
+                <span class="cart-total">0,00 €</span>
+            </div>
+            <div class="complete-buttons">
+                <button type="button" id="closeOrderBtn">Order more</button>
+                <button class="complete-order">Complete order</button>
+                
+            </div>
+
+            <div class="complete-buttons-contol">
+                <a href="accessibility.html" class="href">
+                    <button class="control-button">
+                        <div class="control-button-div">
+                            <img src="assets/accessibility.png" width="25", height="25">
+                            Accessibility settings
+                        </div>
+                    </button>
+                </a>
+                <a href="index.html" class="href">
+                    <button class="control-button">
+                        <div class="control-button-div">
+                            Cancel order
+                        </div>
+                    </button>
+                </a>
+            </div>
+
+        
+        </div>
+
+    </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Krok 1: Pierwszy div po kliknięciu Complete order -->
+<div id="step1Screen" class="status-screen">
+  <h2>Processing your order...</h2>
+  <p>Please wait</p>
+</div>
+
+<!-- Krok 2: Drugi div po 3 sekundach -->
+<div id="step2Screen" class="status-screen">
+  <h2>The order has been recived and it is now being prepared</h2>
+  <p>Printing your recipt...</p>
+</div>
     
 </body>
 </html>
